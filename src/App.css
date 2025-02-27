@@ -1,0 +1,77 @@
+header {
+  background-color: rgb(70, 63, 63);
+  min-height: 5rem;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border: 1px, solid, black;
+  position: sticky;
+}
+
+footer {
+  margin-top: auto;
+  background-color: rgb(70, 63, 63);
+  min-height: 5rem;
+  border: 1px, solid, black;
+}
+
+.list {
+  padding: 0;
+  margin-right: 20px;
+  border: 1px, solid, black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.list-item,
+.list-item:visited,
+.list-item:active,
+.list-item:hover {
+  text-decoration: none;
+  color: white;
+  margin-left: 25px;
+  padding: 0, 20px, 0, 20px;
+  list-style: none;
+  border: 1px, solid, blue;
+}
+
+.title {
+  align-items: center;
+  border: 1px, solid, red;
+  margin-right: auto;
+  margin-left: 20px;
+  display: flex;
+}
+
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  background-color: darkgray;
+}
+
+.app-container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  border: 1px, solid, green;
+  /* background-image: url("../img/bg.jpg"); */
+  background-color: black;
+  height: 20vh;
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
+  padding: 30px;
+}
