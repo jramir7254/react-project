@@ -1,0 +1,16 @@
+.card-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Left column is twice as wide as right */
+  width: 600px;
+  border: 1px solid #ccc;
+}
+
+.left {
+  background-color: lightblue;
+  padding: 20px;
+}
+
+.right {
+  background-color: lightgreen;
+  padding: 20px;
+}

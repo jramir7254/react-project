@@ -12,7 +12,10 @@ export default function Header() {
             <div>
                 <ul className="list">
                     <Link to='/' className="list-item">Home</Link>
+                    <Link to='/Workshops' className="list-item">Workshops</Link>
+                    <Link to='/Hackathon' className="list-item">Hackathon</Link>
                     <Link to='/Datathon' className="list-item">Datathon</Link>
+                    <Link to='/About' className="list-item">About</Link>
                 </ul>
             </div>
         </header>

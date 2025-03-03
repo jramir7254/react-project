@@ -1,27 +1,33 @@
-// App.jsx
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import './App.css';
-import Header from './Components/Header.jsx';
-import Footer from './Components/Footer.jsx';
-import Home from './Pages/Home.jsx';
-import Datathon from './Pages/Datathon.jsx';  // Make sure this import is added
 
-function App() {
+import Header from './Components/Header.jsx';
+
+import Home from './Pages/Home.jsx';
+import Workshops from './Pages/Workshops.jsx';
+import Datathon from './Pages/Datathon.jsx';  
+import Hackathon from './Pages/Hackathon.jsx';  
+import About from './Pages/About.jsx';
+
+import Footer from './Components/Footer.jsx';
+
+
+export default function App() {
   return (
     <div className='app-container'>
       <Header />
-      {/* The main content area */}
-      <div>
+      <main>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/Workshops' element={<Workshops />} />
           <Route path='/Datathon' element={<Datathon />} />
+          <Route path='/Hackathon' element={<Hackathon />} />
+          <Route path='/About' element={<About />} />
         </Routes>
-      </div>
+      </main>
       <Footer />
     </div>
   );
 }
-
-export default App;
