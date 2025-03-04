@@ -8,7 +8,9 @@ import ieeeLogo from "../assets/IEEE_Logo.jpg";
 import msLogo from "../assets/MS_Logo.png";
 import nsfLogo from "../assets/NSF_Logo.png";
 import Card from "../Components/Card.jsx"
+// import {TiChevronLeftOutline, TiChevronRightOutline} from 'https://cdn.skypack.dev/react-icons/ti';
 import { useEffect } from "react";
+import * as XLSX from 'xlsx';
 
 export default function Home() {
     return (
@@ -36,9 +38,17 @@ export default function Home() {
                 <div className="event">
                     <img src={ServinPP} width={500} height={500} alt="Servin Profile" />
                 </div>
-                
             </div>
-            <EventSection></EventSection>
+            {/* <EventSection></EventSection> */}
+            <div className="cont">
+
+            
+            <Test >
+            {[...new Array(CARDS)].map(() => (
+                <Card/>
+            ))}
+            </Test>
+            </div>
             <Sponsors></Sponsors>
         </section>
     );
@@ -99,6 +109,49 @@ function EventSection() {
         </section>
     );
 }
+
+
+const CARDS = 10;
+const MAX_VISIBILITY = 3;
+
+const Card2 = ({title, content}) => (
+  <div className='card'>
+    <h2>{title}</h2>
+    <p>{content}</p>
+  </div>
+);
+
+
+
+
+const Test = ({children}) => {
+    const [active, setActive] = useState(2);
+    const count = React.Children.count(children);
+    
+    return (
+        <section>
+            <div className='carousel'>
+                {active > 0 && <button className='nav left' onClick={() => setActive(i => i - 1)}>left</button>}
+                {React.Children.map(children, (child, i) => (
+                    <div className='card-container' style={{
+                        '--active': i === active ? 1 : 0,
+                        '--offset': (active - i) / 3,
+                        '--direction': Math.sign(active - i),
+                        '--abs-offset': Math.abs(active - i) / 3,
+                        'pointer-events': active === i ? 'auto' : 'none',
+                        'opacity': Math.abs(active - i) >= MAX_VISIBILITY ? '0' : '1',
+                        'display': Math.abs(active - i) > MAX_VISIBILITY ? 'none' : 'block',
+                        }}>
+                        {child}
+                    </div>
+                ))}
+                {active < count - 1 && <button className='nav right' onClick={() => setActive(i => i + 1)}>right</button>}
+            </div>
+        </section>
+
+    );
+  }
+
 
 
 function Sponsors() {
